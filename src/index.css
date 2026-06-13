@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Tajawal', Arial, sans-serif;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+}
+
+@layer components {
+  .card-status-green {
+    @apply border-l-4 border-l-status-green bg-gradient-to-l from-green-50 to-white;
+  }
+
+  .card-status-blue {
+    @apply border-l-4 border-l-status-blue bg-gradient-to-l from-blue-50 to-white;
+  }
+
+  .card-status-red {
+    @apply border-l-4 border-l-status-red bg-gradient-to-l from-red-50 to-white;
+  }
+
+  .btn-action {
+    @apply flex flex-col items-center justify-center gap-1 p-3 rounded-xl transition-all duration-200 hover:scale-105 active:scale-95 min-w-[70px];
+  }
+
+  .section-title {
+    @apply text-sm font-bold text-slate-700 mb-2 flex items-center gap-2;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-medical-primary focus:ring-2 focus:ring-medical-primary/20 outline-none transition-all bg-white text-right;
+  }
+
+  .dropdown-menu {
+    @apply absolute top-full right-0 mt-2 bg-white rounded-lg shadow-xl border border-slate-200 py-2 min-w-[150px] z-50 animate-fadeIn;
+  }
+
+  .dropdown-item {
+    @apply px-4 py-2 hover:bg-slate-100 cursor-pointer transition-colors text-right;
+  }
+}
+
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
